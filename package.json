@@ -20,7 +20,7 @@
     "add-component": "yarn workspace design-system add-component",
     "test:creevey": "yarn workspace design-system creevey",
     "test:creevey:update": "yarn workspace design-system creevey --update",
-    "test:creevey:runner": "yarn workspace design-system creevey --ui",
+    "test:creevey:ui": "yarn workspace design-system creevey --ui",
     "test:loki": "yarn workspace design-system loki test",
     "test:loki:update": "yarn workspace design-system loki update",
     "test:loki:approve": "yarn workspace design-system loki approve",
