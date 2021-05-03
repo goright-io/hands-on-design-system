@@ -62,7 +62,7 @@ Inside a `config.js` you already got a tailored style-dictionary config, which w
 - `yarn design-system:version` - bumps library version and creates a commit with contents of `dist/` folder.
 - `yarn tokens` - rebuilds tokens
 - `yarn test:creevey` - run tests with [creevey](https://github.com/wKich/creevey)
-- `yarn test:creevey:runner` - run creevey with UI
+- `yarn test:creevey:ui` - run creevey with UI
 - `yarn test:creevey:update` - update all screenshots for creevey
 - `yarn test:loki` - run tests with [loki](https://loki.js.org/)
 - `yarn test:loki:update` - update all screenshots for loki
