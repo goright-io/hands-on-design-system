@@ -4,9 +4,9 @@
   "main": "dist/design-system.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn tokens && start-storybook -p 6006",
+    "start": "yarn tokens && start-storybook -s .storybook/public -p 6006",
     "build": "webpack --mode=production",
-    "storybook:build": "build-storybook",
+    "storybook:build": "build-storybook -s .storybook/public",
     "add-component": "node .add-component/index.js",
     "version": "yarn build && git add dist/",
     "tokens": "style-dictionary build --config ./src/tokens/config.js"
