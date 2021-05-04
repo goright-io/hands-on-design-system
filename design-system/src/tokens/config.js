@@ -22,7 +22,34 @@ StyleDictionary.registerFilter({
   name: "isTypography",
   matcher: function (prop) {
     return (
+      [
+        'fontSize',
+        'textDecoration',
+        'fontFamily',
+        'fontWeight',
+        'fontStyle',
+        'fontStretch',
+        'fontStyleOld',
+        'letterSpacing',
+        'lineHeight',
+        'paragraphIndent',
+        'paragraphSpacing',
+        'textCase'
+      ].indexOf(prop.path[1]) !== -1
+    )
+    /* return (
       prop.name.startsWith("headline") || prop.name.startsWith("paragraph")
+    );
+    */
+  },
+});
+
+/* Basic filter to separate spacing tokens. */
+StyleDictionary.registerFilter({
+  name: "isSpacing",
+  matcher: function (prop) {
+    return (
+      prop.path[0] === "spacing"
     );
   },
 });
@@ -49,6 +76,12 @@ module.exports = {
           filter: {
             type: "color",
           },
+        },
+        /* Filter and extract spacing tokens*/
+        {
+          destination: "spacing.js",
+          format: "javascript/es6",
+          filter: "isSpacing",
         },
       ],
     },

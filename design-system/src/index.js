@@ -5,7 +5,7 @@
  */
 
 export { default as GlobalStyle } from "./global.js";
-export { colors, typography } from "./tokens";
+export { colors, typography, spacing } from "./tokens";
 
 
 export { default as Button } from "./components/Button";
