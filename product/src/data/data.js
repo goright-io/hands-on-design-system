@@ -1,6 +1,8 @@
+const imagesPath = `${process.env.PUBLIC_URL}/images`
+
 module.exports = {
   "user": {
-    "avatar": "/images/avatar.png"
+    "avatar": `${imagesPath}/avatar.png`
   },
   "products": {
     "item1": {
@@ -8,7 +10,7 @@ module.exports = {
       "price": "€95.00",
       "category": "Men’s Shoe",
       "description": "Men’s Shoe, Black",
-      "image": "/images/item1.png"
+      "image": `${imagesPath}/item1.png`
     },
     "item2": {
       "name": "Nike Air Shadow Force",
