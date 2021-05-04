@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { Avatar, Button, Icon, colors } from "design-system";
 import { Link } from "react-router-dom";
 
-const data = require("../data/products.json");
+const data = require("../data/data.js");
 
 const Home = () => {
   return (
@@ -38,9 +38,9 @@ const Home = () => {
           </StyledDiv4>
         </StyledDiv3>
         <StyledDiv5>
-          {Object.entries(data.products).map((item, key) => {
+          {Object.entries(data.products).map(([id, item]) => {
             return (
-              <StyledLink key={key} to={`/details/${key}`}>
+              <StyledLink key={id} to={`/details/${id}`}>
                 <StyledImg src={item.image} alt="" />
                 <h4>{item.name}</h4>
                 <StyledP>{item.price}</StyledP>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button, Icon, colors } from "design-system";
 import { Link } from "react-router-dom";
 
-const data = require("../data/products.json");
+const data = require("../data/data.js");
 const items = data.products;
 
 const Details = ({
