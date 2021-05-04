@@ -17,21 +17,21 @@ module.exports = {
       "price": "€105.00",
       "category": "Men’s Shoe",
       "description": "Men’s Shoe, Black",
-      "image": "/images/item2.png"
+      "image": `${imagesPath}/item2.png`
     },
     "item3": {
       "name": "Nike Air Force 1 '07",
       "price": "€95.00",
       "category": "Men’s Shoe",
       "description": "Men’s Shoe, Black",
-      "image": "/images/item3.png"
+      "image": `${imagesPath}/item3.png`
     },
     "item4": {
       "name": "Nike Air Force 1 '07",
       "price": "€95.00",
       "category": "Men’s Shoe",
       "description": "Men’s Shoe, Black",
-      "image": "/images/item4.png"
+      "image": `${imagesPath}/item4.png`
     }
   }
 }
