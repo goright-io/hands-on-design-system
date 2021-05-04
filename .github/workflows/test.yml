@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - 'design-system/src/**'
-  pull_request:
-    paths:
-      - 'design-system/src/**'
 jobs:
   start-and-test:
     runs-on: ubuntu-latest
