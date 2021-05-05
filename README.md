@@ -20,13 +20,12 @@ A workspace for processing design tokens and developing your components library.
 - [Storybook](https://storybook.js.org) for development and preview of components
 - [Style-dictionary](https://github.com/amzn/style-dictionary) for transforming raw json with tokens, xported from Figma to ES6 modules.
 - [Webpack](https://webpack.js.org/) for building the library.
-- Optional: visual regression tests with [Creevey](https://github.com/wKich/creevey) or [Loki](http://loki.js.org/)
+- Optional: visual regression tests with [Creevey](https://github.com/wKich/creevey) 
 #### Folder structure
 
 ```
 design-system/
 ┣ .add-component/
-┣ .loki/
 ┣ .storybook/
 ┣ dist/
 ┣ node_modules/
@@ -64,10 +63,6 @@ Inside a `config.js` you already got a tailored style-dictionary config, which w
 - `yarn test:creevey` - run tests with [creevey](https://github.com/wKich/creevey)
 - `yarn test:creevey:ui` - run creevey with UI
 - `yarn test:creevey:update` - update all screenshots for creevey
-- `yarn test:loki` - run tests with [loki](https://loki.js.org/)
-- `yarn test:loki:update` - update all screenshots for loki
-- `yarn test:loki:approve` - approve all failing screenshots for loki
-
 
 ### Product
 
