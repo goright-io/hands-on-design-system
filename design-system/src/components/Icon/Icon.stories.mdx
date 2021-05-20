@@ -1,4 +1,4 @@
-import { ArgsTable, Meta, Preview, Story } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
 
 import Icon, { icons } from ".";
 import { colors as themeColors } from "../../tokens";
@@ -9,7 +9,7 @@ import { colors as themeColors } from "../../tokens";
 
 SVG icons with customizable color and size, mainly to be used inside the buttons
 
-<Preview>
+<Canvas>
   <Story name="All">
     {Object.keys(icons).map((icon) => (
       <Icon key={icon} name={icon} style={{ padding: "1em" }} />
@@ -37,6 +37,6 @@ SVG icons with customizable color and size, mainly to be used inside the buttons
       return <Icon name={name} color={colorValue} />;
     }}
   </Story>
-</Preview>
+</Canvas>
 
 <ArgsTable of={Icon} />

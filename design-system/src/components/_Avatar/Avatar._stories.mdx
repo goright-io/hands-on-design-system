@@ -1,5 +1,5 @@
 
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Avatar from ".";
 import userImage from "./userImageSample.jpg";
@@ -15,3 +15,8 @@ import userImage from "./userImageSample.jpg";
     {(args) => <Avatar {...args}/>}
   </Story>
 </Canvas>
+
+
+## Props
+
+<ArgsTable of={Avatar} />

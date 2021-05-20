@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { typography as t } from "tokens";
+import { typography } from "tokens";
+import { string, shape, arrayOf } from "prop-types";
 
 /* SummaryTable
  *
@@ -35,6 +36,16 @@ const SummaryTable = ({ items, total }) => {
   );
 };
 
+SummaryTable.propTypes = {
+  items: arrayOf(
+    shape({
+      name: string,
+      price: string,
+    })
+  ),
+  total: string,
+};
+
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
@@ -59,22 +70,22 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledPrice = styled.div`
-  font-family: ${t.headline6FontFamily};
-  font-size: ${t.headline6FontSize};
-  font-weight: ${t.headline6FontWeight};
-  font-style: ${t.headline6FontStyle};
-  line-height: ${t.headline6LineHeight};
-  letter-spacing: ${t.headline6LetterSpacing};
+  font-family: ${typography.headline6FontFamily};
+  font-size: ${typography.headline6FontSize};
+  font-weight: ${typography.headline6FontWeight};
+  font-style: ${typography.headline6FontStyle};
+  line-height: ${typography.headline6LineHeight};
+  letter-spacing: ${typography.headline6LetterSpacing};
   text-align: right;
 `;
 
 const StyledTotal = styled.div`
-  font-family: ${t.headline4FontFamily};
-  font-size: ${t.headline4FontSize};
-  font-weight: ${t.headline4FontWeight};
-  font-style: ${t.headline4FontStyle};
-  line-height: ${t.headline4LineHeight};
-  letter-spacing: ${t.headline4LetterSpacing};
+  font-family: ${typography.headline4FontFamily};
+  font-size: ${typography.headline4FontSize};
+  font-weight: ${typography.headline4FontWeight};
+  font-style: ${typography.headline4FontStyle};
+  line-height: ${typography.headline4LineHeight};
+  letter-spacing: ${typography.headline4LetterSpacing};
   text-align: right;
 `;
 

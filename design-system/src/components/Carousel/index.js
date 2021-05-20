@@ -1,8 +1,10 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { colors } from "tokens";
+import { arrayOf, shape, string } from "prop-types";
 
 /* Carousel
  *
@@ -23,7 +25,11 @@ const Carousel = ({ images, ...props }) => {
   );
 };
 
-export const StyledCarousel = styled.div`
+Carousel.propTypes = {
+  images: arrayOf(shape({ source: string })).isRequired,
+};
+
+const StyledCarousel = styled.div`
   > .awssld {
     --control-bullet-color: ${colors.secondaryBlack20};
     --control-bullet-active-color: ${colors.secondaryBlack100};
