@@ -1,5 +1,5 @@
 module.exports = (name) => `
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import ${name} from ".";
 
@@ -9,9 +9,13 @@ import ${name} from ".";
 
 TODO: add component description
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <${name}/>
   </Story>
-</Preview>
+</Canvas>
+
+## Props
+
+<ArgsTable of={${name}} />
 `;
