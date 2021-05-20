@@ -92,7 +92,7 @@ const Styledh1 = styled.h1`
   margin-bottom: 16px;
 `;
 const Styledh2 = styled.h2`
-  color: ${colors.primaryOrange100};
+  color: ${colors.primary900};
   margin-bottom: 40px;
 `;
 

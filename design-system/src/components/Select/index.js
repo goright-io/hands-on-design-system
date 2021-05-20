@@ -70,16 +70,14 @@ export const StyledSelect = styled(Listbox)`
     font-family: ${typography.paragraph1FontFamily};
     line-height: 24px;
     font-weight: bold;
-    border-color: ${colors.secondaryBlack20};
+    border-color: ${colors.onSurface200};
     border-radius: 12px;
-    color: ${colors.secondaryBlack100};
+    color: ${colors.onBackground500};
     position: relative;
     outline: none;
     align-items: baseline;
   }
   > [data-reach-listbox-arrow] {
-    /* top: calc(50% - 9px); */
-    /* position: absolute; */
     right: 0.75rem;
     pointer-events: none;
     display: block;

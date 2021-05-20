@@ -110,7 +110,7 @@ const StyledP = styled.p`
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${colors.secondaryBlack10};
+  background-color: ${colors.onSurface100};
   margin: 32px 0;
 `;
 
