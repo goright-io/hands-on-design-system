@@ -8,11 +8,11 @@ import { string, shape, arrayOf } from "prop-types";
  * SummaryTable displays order details in a table, each row has information on name and price for each item.
  */
 
-const SummaryTable = ({ items, total }) => {
+const SummaryTable = ({ items, total, ...props }) => {
   return (
     items &&
     items.length > 0 && (
-      <>
+      <div {...props}>
         <StyledHeading>Summary</StyledHeading>
         <StyledGrid>
           {items.map((item) => (
@@ -31,7 +31,7 @@ const SummaryTable = ({ items, total }) => {
             </StyledGrid>
           </>
         )}
-      </>
+      </div>
     )
   );
 };

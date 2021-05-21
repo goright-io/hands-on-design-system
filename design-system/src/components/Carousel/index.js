@@ -10,9 +10,9 @@ import { arrayOf, shape, string } from "prop-types";
  *
  * Simple carousel to display payment method options
  */
-const Carousel = ({ images, ...props }) => {
+const Carousel = ({ images, className, ...props }) => {
   return (
-    <StyledCarousel>
+    <StyledCarousel className={className}>
       <AwesomeSlider organicArrows={false} {...props}>
         {images &&
           images.map((image) => (

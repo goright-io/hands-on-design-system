@@ -6,7 +6,7 @@ import styled from "styled-components";
  *
  * Avatar displays user picture
  */
-const Avatar = ({ src, ...props }) => <StyledAvatar src={src} />;
+const Avatar = ({ src, ...props }) => <StyledAvatar src={src} {...props} />;
 
 const StyledAvatar = styled.img`
   width: 48px;
