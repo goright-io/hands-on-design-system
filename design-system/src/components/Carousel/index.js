@@ -31,7 +31,7 @@ Carousel.propTypes = {
 
 const StyledCarousel = styled.div`
   > .awssld {
-    --control-bullet-color: ${colors.onSurface100};
+    --control-bullet-color: ${colors.onSurface500};
     --control-bullet-active-color: ${colors.onBackground500};
     --content-background-color: transparent;
     --loader-bar-color: ${colors.background500};
