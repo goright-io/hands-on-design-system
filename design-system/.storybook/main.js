@@ -17,7 +17,6 @@ module.exports = {
 
     // SVGR
     const rules = config.module.rules;
-    console.log("🚀 ~ file: main.js ~ line 20 ~ webpackFinal: ~ rules", rules);
     // modify storybook's file-loader rule to avoid conflicts with svgr
     const fileLoaderRule = rules.find((rule) => rule.test.test(".svg"));
 

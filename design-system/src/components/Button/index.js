@@ -24,13 +24,12 @@ const StyledButton = styled.button`
   justify-content: center;
   cursor: pointer;
   outline: none;
-  border: 1px solid;
-  border-color: transparent;
   box-sizing: border-box;
   line-height: 24px;
   position: relative;
   user-select: none;
   text-decoration: none;
+  border-width: 0;
   border-radius: 1rem;
   padding: ${({ isIcon }) => (isIcon ? "12px" : "16px")};
   background-color: ${({ color }) => color};
@@ -40,8 +39,8 @@ const StyledButton = styled.button`
   font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${({ isOutline }) =>
-    isOutline &&
-    `
+    isOutline && 
+    `border-width: 1px;
      border-color: ${colors.onSurface100}; 
      background-color: transparent;
      color: ${colors.onBackground500};
@@ -51,10 +50,6 @@ const StyledButton = styled.button`
     `
      background-color: transparent;
      color: ${colors.primary500};
-     font-size: 18px;
-     line-height: 28px;
-     font-weight: 500;
-     letter-spacing: -0.4px;
      padding: 0;
   `};
 
