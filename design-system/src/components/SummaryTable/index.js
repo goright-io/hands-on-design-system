@@ -72,8 +72,8 @@ const StyledPrice = styled.div`
   font-size: 14px;
   font-weight: 700;
   font-style: normal;
-  line-height: -0.3px;
-  letter-spacing: 24px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
   text-align: right;
 `;
 
@@ -82,8 +82,8 @@ const StyledTotal = styled.div`
   font-size: 18px;
   font-weight: 700;
   font-style: normal;
-  line-height: -0.4px;
-  letter-spacing: 28px;
+  line-height: 28px;
+  letter-spacing: -0.4px;
   text-align: right;
 `;
 

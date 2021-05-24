@@ -123,7 +123,9 @@ const Checkout = () => {
           <h2>€95.00</h2>
         </StyledDiv6>
         <Link to="/" style={{ textDecoration: "none" }}>
-          <Button isStretched>Place Order</Button>
+          <Button isStretched className="margin-top-3xl">
+            Place Order
+          </Button>
         </Link>
       </StyledDiv4>
     </div>

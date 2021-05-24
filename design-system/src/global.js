@@ -91,13 +91,15 @@ const bodyStyles = css`
    * Here we generate helper classes from tokens to set margins quickly.
    * The classes syntax match the pattern ".margin-{direction}-{size}", for example: ".margin-top-sm"
    */
-  ${Object.keys(spacing).map((token) => {
+  // WHEN YOU HAVE SPACING TOKENS READY, UNCOMMENT LINES BELOW
+  /* ${Object.keys(spacing).map((token) => {
     const [size, direction] = token.match(/[0-9]?[A-Z][a-z]+/g);
     return `.margin-${direction.toLowerCase()}-${size.toLowerCase()} {
       margin-${direction.toLowerCase()}: ${spacing[token]}
     }`;
-  })}
+  })} */
 `;
+
 /* Allow design system consumers to access font settings but control how and
  where they load the font. */
 
