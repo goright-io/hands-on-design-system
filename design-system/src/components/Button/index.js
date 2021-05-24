@@ -39,7 +39,7 @@ const StyledButton = styled.button`
   font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${({ isOutline }) =>
-    isOutline && 
+    isOutline &&
     `border-width: 1px;
      border-color: ${colors.onSurface100}; 
      background-color: transparent;
@@ -52,11 +52,6 @@ const StyledButton = styled.button`
      color: ${colors.primary500};
      padding: 0;
   `};
-
-  &:has(span) {
-    padding: 12px;
-    background: blue;
-  }
 `;
 
 Button.propTypes = {

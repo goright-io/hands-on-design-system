@@ -39,9 +39,9 @@ const Cart = ({
             ]}
             total={item.price}
           />
-          <Link to="/checkout" style={{ textDecoration: "none" }}>
-            <Button isStretched>Checkout</Button>
-          </Link>
+          <Button as={Link} to="/checkout" isStretched>
+            Checkout
+          </Button>
         </StyledDiv5>
       </StyledDiv1>
     </div>
