@@ -33,6 +33,9 @@ Button component provides interfaces for all types of the buttons. Different typ
   <Story name="Link" args={{ label: "Button", isOutline: true, href: "https://varya.me" }}>
     {(args) => <Button {...args} />}
   </Story>
+  <Story name="Borderless" args={{ label: "Button", isBorderless: true}}>
+    {(args) => <Button {...args} />}
+  </Story>
   <Story name="Stretched" args={{ label: "Button", isStretched: true }}>
     {(args) => <Button {...args} />}
   </Story>

@@ -50,7 +50,6 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   row-gap: 16px;
-  margin-bottom: 32px;
 `;
 
 const StyledBorder = styled.div`
