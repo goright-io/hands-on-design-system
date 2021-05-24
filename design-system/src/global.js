@@ -86,12 +86,23 @@ const bodyStyles = css`
     line-height: ${t.headline6LineHeight};
     letter-spacing: ${t.headline6LetterSpacing};
   }
-`;
 
-// Allow design system consumers to access font settings but control how and
-// where they load the fon${t.
+  /* Spacing helpers
+   * Here we generate helper classes from tokens to set margins quickly.
+   * The classes syntax match the pattern ".margin-{direction}-{size}", for example: ".margin-top-sm"
+   */
+  ${Object.keys(spacing).map((token) => {
+    const [size, direction] = token.match(/[0-9]?[A-Z][a-z]+/g);
+    return `.margin-${direction.toLowerCase()}-${size.toLowerCase()} {
+      margin-${direction.toLowerCase()}: ${spacing[token]}
+    }`;
+  })}
+`;
+/* Allow design system consumers to access font settings but control how and
+ where they load the font. */
+
 export const fontUrl =
-  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap";
+  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
 
 const globalStyle = createGlobalStyle`
   body {
