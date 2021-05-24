@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { typography } from "tokens";
 import { string, shape, arrayOf } from "prop-types";
 
 /* SummaryTable
@@ -69,22 +68,22 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledPrice = styled.div`
-  font-family: ${typography.headline6FontFamily};
-  font-size: ${typography.headline6FontSize};
-  font-weight: ${typography.headline6FontWeight};
-  font-style: ${typography.headline6FontStyle};
-  line-height: ${typography.headline6LineHeight};
-  letter-spacing: ${typography.headline6LetterSpacing};
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: -0.3px;
+  letter-spacing: 24px;
   text-align: right;
 `;
 
 const StyledTotal = styled.div`
-  font-family: ${typography.headline4FontFamily};
-  font-size: ${typography.headline4FontSize};
-  font-weight: ${typography.headline4FontWeight};
-  font-style: ${typography.headline4FontStyle};
-  line-height: ${typography.headline4LineHeight};
-  letter-spacing: ${typography.headline4LetterSpacing};
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: -0.4px;
+  letter-spacing: 28px;
   text-align: right;
 `;
 

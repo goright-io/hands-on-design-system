@@ -2,7 +2,6 @@ import { arrayOf, string, shape } from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import Icon, { icons } from "../Icon";
-import { colors, typography } from "tokens";
 import {
   Listbox,
   ListboxInput,
@@ -54,7 +53,7 @@ const Select = ({ defaultValue, options, ...props }) => {
 };
 
 Select.propTypes = {
-  /* text which will be always displayed by default. If omitted, first value is selected*/
+  /* text which will be always displayed by default. If omitted, first value is selected */
   defaultValue: string,
   options: arrayOf(
     shape({
@@ -67,12 +66,12 @@ Select.propTypes = {
 export const StyledSelect = styled(Listbox)`
   > [data-reach-listbox-button] {
     padding: 8px 16px;
-    font-family: ${typography.paragraph1FontFamily};
+    font-family: "DM Sans";
     line-height: 24px;
     font-weight: bold;
-    border-color: ${colors.onSurface200};
+    border-color: "rgba(188, 199, 213, 1)";
     border-radius: 12px;
-    color: ${colors.onBackground500};
+    color: "rgba(12, 17, 24, 1)";
     position: relative;
     outline: none;
     align-items: baseline;
