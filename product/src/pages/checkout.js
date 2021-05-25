@@ -7,9 +7,11 @@ import styled from "styled-components";
 import { Button, Icon, Carousel, Select, colors } from "design-system";
 import { Link } from "react-router-dom";
 
-const card = "/images/card.svg";
-const cardBlue = "/images/cardBlue.svg";
-const cardPink = "/images/cardPink.svg";
+const imagesPath = `${process.env.PUBLIC_URL}/images`;
+
+const card = `${process.env.PUBLIC_URL}/images/card.svg`;
+const cardBlue = `${process.env.PUBLIC_URL}/images/cardBlue.svg`;
+const cardPink = `${process.env.PUBLIC_URL}/images/cardPink.svg`;
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
@@ -69,11 +71,9 @@ const Checkout = () => {
     <div>
       <StyledDiv1>
         <StyledDiv2>
-          <Link to="/cart" style={{ textDecoration: "none" }}>
-            <Button isIcon color="white">
-              <Icon name="arrowBack" />
-            </Button>
-          </Link>
+          <Button as={Link} isIcon to="/cart/item1" color="white">
+            <Icon name="arrowBack" />
+          </Button>
           <StyledDiv3>
             <h4>Card</h4>
           </StyledDiv3>
