@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { typography as t } from "tokens";
+import { string, shape, arrayOf } from "prop-types";
 
 /* SummaryTable
  *
  * SummaryTable displays order details in a table, each row has information on name and price for each item.
  */
 
-const SummaryTable = ({ items, total }) => {
+const SummaryTable = ({ items, total, ...props }) => {
   return (
     items &&
     items.length > 0 && (
-      <>
+      <div {...props}>
         <StyledHeading>Summary</StyledHeading>
         <StyledGrid>
           {items.map((item) => (
@@ -30,16 +30,25 @@ const SummaryTable = ({ items, total }) => {
             </StyledGrid>
           </>
         )}
-      </>
+      </div>
     )
   );
+};
+
+SummaryTable.propTypes = {
+  items: arrayOf(
+    shape({
+      name: string,
+      price: string,
+    })
+  ),
+  total: string,
 };
 
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   row-gap: 16px;
-  margin-bottom: 32px;
 `;
 
 const StyledBorder = styled.div`
@@ -59,22 +68,22 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledPrice = styled.div`
-  font-family: ${t.headline6FontFamily};
-  font-size: ${t.headline6FontSize};
-  font-weight: ${t.headline6FontWeight};
-  font-style: ${t.headline6FontStyle};
-  line-height: ${t.headline6LineHeight};
-  letter-spacing: ${t.headline6LetterSpacing};
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 24px;
+  letter-spacing: -0.3px;
   text-align: right;
 `;
 
 const StyledTotal = styled.div`
-  font-family: ${t.headline4FontFamily};
-  font-size: ${t.headline4FontSize};
-  font-weight: ${t.headline4FontWeight};
-  font-style: ${t.headline4FontStyle};
-  line-height: ${t.headline4LineHeight};
-  letter-spacing: ${t.headline4LetterSpacing};
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: -0.4px;
   text-align: right;
 `;
 

@@ -1,16 +1,17 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import { colors } from "tokens";
+import { arrayOf, shape, string } from "prop-types";
 
 /* Carousel
  *
  * Simple carousel to display payment method options
  */
-const Carousel = ({ images, ...props }) => {
+const Carousel = ({ images, className, ...props }) => {
   return (
-    <StyledCarousel>
+    <StyledCarousel className={className}>
       <AwesomeSlider organicArrows={false} {...props}>
         {images &&
           images.map((image) => (
@@ -23,12 +24,16 @@ const Carousel = ({ images, ...props }) => {
   );
 };
 
-export const StyledCarousel = styled.div`
+Carousel.propTypes = {
+  images: arrayOf(shape({ source: string })).isRequired,
+};
+
+const StyledCarousel = styled.div`
   > .awssld {
-    --control-bullet-color: ${colors.secondaryBlack20};
-    --control-bullet-active-color: ${colors.secondaryBlack100};
+    --control-bullet-color: "rgba(100, 116, 139, 1)";
+    --control-bullet-active-color: "rgba(12, 17, 24, 1)";
     --content-background-color: transparent;
-    --loader-bar-color: #ffffff;
+    --loader-bar-color: "rgba(255, 255, 255, 1)";
     --loader-bar-height: 1px;
   }
   .awssld__content > img,

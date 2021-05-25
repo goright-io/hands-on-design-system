@@ -13,7 +13,7 @@ const cardPink = "/images/cardPink.svg";
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
-  background-color: ${colors.primaryOrange10};
+  background-color: ${colors.primary100};
 `;
 
 const StyledDiv2 = styled.div`
@@ -44,14 +44,14 @@ const StyledDiv5 = styled.div`
 `;
 
 const StyledLink = styled.a`
-  color: ${colors.primaryOrange100};
+  color: ${colors.primary900};
   font-size: 18px;
 `;
 
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${colors.secondaryBlack10};
+  background-color: ${colors.onSurface100};
   margin-top: 8px;
   margin-bottom: 32px;
 `;
@@ -122,9 +122,9 @@ const Checkout = () => {
           <h2>Total</h2>
           <h2>€95.00</h2>
         </StyledDiv6>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button isStretched>Place Order</Button>
-        </Link>
+        <Button as={Link} to="/" isStretched className="margin-top-3xl">
+          Place Order
+        </Button>
       </StyledDiv4>
     </div>
   );

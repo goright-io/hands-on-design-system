@@ -36,9 +36,15 @@ const Details = ({
             <StyledP>{item.category}</StyledP>
             <Styledh1>{item.name}</Styledh1>
             <Styledh2>{item.price}</Styledh2>
-            <Link to={`/cart/${id}`} style={{ textDecoration: "none" }}>
-              <Button isStretched>Add to Cart</Button>
-            </Link>
+            <Button as={Link} to={`/cart/${id}`} isStretched>
+              Add to Cart
+            </Button>
+            <StyledDiv6>
+              <p>Added to your cart</p>
+              <Button as={Link} to="/checkout" isBorderless>
+                Checkout
+              </Button>
+            </StyledDiv6>
           </StyledDiv4>
         </StyledDiv1>
       </div>
@@ -70,6 +76,15 @@ const StyledDiv5 = styled.div`
   margin-bottom: 24px;
   position: relative;
 `;
+const StyledDiv6 = styled.div`
+  display: flex;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
+  justify-content: space-between;
+  border-radius: 16px;
+  margin-top: 24px;
+`;
 
 const StyledButton = styled(Button)`
   position: absolute;
@@ -92,7 +107,7 @@ const Styledh1 = styled.h1`
   margin-bottom: 16px;
 `;
 const Styledh2 = styled.h2`
-  color: ${colors.primaryOrange100};
+  color: ${colors.primary900};
   margin-bottom: 40px;
 `;
 

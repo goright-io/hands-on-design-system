@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
 
 import Carousel from ".";
 import cat1 from "./cat1.png";
@@ -21,10 +21,14 @@ export const images = [
   { source: cat4 },
 ];
 
-<Preview>
+<Canvas>
   {/* Simple story without "controls" tab at the bottom.
    * This tab is enabled by default, we can hide it explicitly (otherwise it will be shown empty */}
   <Story name="Default" parameters={{ controls: { disable: true } }}>
     <Carousel images={images} style={{maxHeight: "300px"}} />
   </Story>
-</Preview>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Carousel} />
