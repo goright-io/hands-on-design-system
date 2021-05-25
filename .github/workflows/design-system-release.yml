@@ -1,9 +1,10 @@
-# This wqorkflow will be triggered every time when new version of library released
-name: Product release
+name: Storybook
 on:
   push:
     branches:
       - 'main'
+    paths:
+      - 'design-system/**'
 
 jobs:
   version-check:
@@ -21,12 +22,11 @@ jobs:
         uses: EndBug/version-check@v1
         with:
           diff-search: true
-          file-name: product/package.json
-
+          file-name: design-system/package.json
+          
   build-and-deploy:
-    needs: version-check
     runs-on: ubuntu-latest
-    if: needs.version-check.outputs.changed == 'true'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -45,20 +45,27 @@ jobs:
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yrn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
-
+            ${{ runner.os }}-yrn-
+          
       - name: Install dependencies
         run: |
           yarn install --frozen-lockfile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
 
-      - name: Build product
+      - name: Build design tokens
         run: |
-          yarn product:build
-
-      - name: Deploy product
+          yarn tokens
+          
+          
+      - name: Build Storybook
+        run: |
+          yarn storybook:build
+          
+      - name: Deploy Storybook
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          folder: ./product/build
+          folder: ./design-system/storybook-static
           branch: gh-pages
+          target-folder: storybook
