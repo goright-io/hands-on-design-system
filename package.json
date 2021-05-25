@@ -24,7 +24,8 @@
     "product": "yarn workspace product start",
     "product:build": "yarn workspace product build",
     "product:version": "yarn workspace product version",
-    "deploy": "yarn workspace product deploy"
+    "deploy:product": "gh-pages -d product/build && yarn deploy:storybook",
+    "deploy:storybook": "gh-pages -d design-system/storybook-static -e storybook"
   },
   "eslintIgnore": [
     "product",
