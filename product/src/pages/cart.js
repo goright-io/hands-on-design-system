@@ -39,9 +39,9 @@ const Cart = ({
             ]}
             total={item.price}
           />
-          <Button as={Link} to="/checkout" isStretched>
-            Checkout
-          </Button>
+          <Link to="/checkout" style={{ textDecoration: "none" }}>
+            <Button isStretched>Checkout</Button>
+          </Link>
         </StyledDiv5>
       </StyledDiv1>
     </div>
@@ -110,7 +110,7 @@ const StyledP = styled.p`
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${colors.onSurface100};
+  background-color: ${colors.secondaryBlack10};
   margin: 32px 0;
 `;
 

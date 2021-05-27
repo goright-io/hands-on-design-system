@@ -100,7 +100,7 @@ const StyledLink = styled(Link)`
 const StyledBorder = styled.div`
   width: 1px;
   height: 16px;
-  background-color: ${colors.onSurface100};
+  background-color: ${colors.primaryBlack10};
   margin: 0 8px;
 `;
 
@@ -119,7 +119,7 @@ const StyledButton = styled(Button)`
 `;
 
 const StyledP = styled.p`
-  color: ${colors.primary900};
+  color: ${colors.primaryOrange100};
   font-weight: 700;
   margin-top: 8px;
 `;

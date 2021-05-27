@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// We will use HashRouter instead of BrowserRouter to simplify deploy to Github Pages
+// We will use HashRouter instead of BrowserRouter fto simplify the deploy to Github Pages
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 /*

@@ -1,5 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
-import { typography } from "./tokens";
+import { typography as t } from "./tokens";
 const bodyStyles = css`
   overflow-y: auto;
   overflow-x: hidden;
@@ -8,11 +8,11 @@ const bodyStyles = css`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-  font-family: ${typography.paragraph3FontFamily};
-  font-size: ${typography.paragraph3FontSize};
-  font-weight: ${typography.paragraph3FontWeight};
-  font-style: ${typography.paragraph3FontStyle};
-  line-height: ${typography.paragraph3LineHeight};
+  font-family: ${t.paragraph3FontFamily};
+  font-size: ${t.paragraph3FontSize};
+  font-weight: ${t.paragraph3FontWeight};
+  font-style: ${t.paragraph3FontStyle};
+  line-height: ${t.paragraph3LineHeight};
 
   * {
     box-sizing: border-box;
@@ -30,81 +30,68 @@ const bodyStyles = css`
   }
 
   p {
-    font-family: ${typography.paragraph3FontFamily};
-    font-size: ${typography.paragraph3FontSize};
-    line-height: ${typography.paragraph3LineHeight};
-    font-weight: ${typography.paragraph3FontWeight};
-    font-style: ${typography.paragraph3FontStyle};
-    letter-spacing: ${typography.paragraph3LetterSpacing};
+    font-family: ${t.paragraph3FontFamily};
+    font-size: ${t.paragraph3FontSize};
+    line-height: ${t.paragraph3LineHeight};
+    font-weight: ${t.paragraph3FontWeight};
+    font-style: ${t.paragraph3FontStyle};
+    letter-spacing: ${t.paragraph3LetterSpacing};
   }
 
   h1 {
-    font-family: ${typography.headline1FontFamily};
-    font-size: ${typography.headline1FontSize};
-    line-height: ${typography.headline1LineHeight};
-    font-weight: ${typography.headline1FontWeight};
-    font-style: ${typography.headline1FontStyle};
-    letter-spacing: ${typography.headline1LetterSpacing};
+    font-family: ${t.headline1FontFamily};
+    font-size: ${t.headline1FontSize};
+    line-height: ${t.headline1LineHeight};
+    font-weight: ${t.headline1FontWeight};
+    font-style: ${t.headline1FontStyle};
+    letter-spacing: ${t.headline1LetterSpacing};
   }
   h2 {
-    font-family: ${typography.headline2FontFamily};
-    font-size: ${typography.headline2FontSize};
-    font-weight: ${typography.headline2FontWeight};
-    font-style: ${typography.headline2FontStyle};
-    line-height: ${typography.headline2LineHeight};
-    letter-spacing: ${typography.headline2LetterSpacing};
+    font-family: ${t.headline2FontFamily};
+    font-size: ${t.headline2FontSize};
+    font-weight: ${t.headline2FontWeight};
+    font-style: ${t.headline2FontStyle};
+    line-height: ${t.headline2LineHeight};
+    letter-spacing: ${t.headline2LetterSpacing};
   }
   h3 {
-    font-family: ${typography.headline3FontFamily};
-    font-size: ${typography.headline3FontSize};
-    font-weight: ${typography.headline3FontWeight};
-    font-style: ${typography.headline3FontStyle};
-    line-height: ${typography.headline3LineHeight};
-    letter-spacing: ${typography.headline3LetterSpacing};
+    font-family: ${t.headline3FontFamily};
+    font-size: ${t.headline3FontSize};
+    font-weight: ${t.headline3FontWeight};
+    font-style: ${t.headline3FontStyle};
+    line-height: ${t.headline3LineHeight};
+    letter-spacing: ${t.headline3LetterSpacing};
   }
   h4 {
-    font-family: ${typography.headline4FontFamily};
-    font-size: ${typography.headline4FontSize};
-    font-weight: ${typography.headline4FontWeight};
-    font-style: ${typography.headline4FontStyle};
-    line-height: ${typography.headline4LineHeight};
-    letter-spacing: ${typography.headline4LetterSpacing};
+    font-family: ${t.headline4FontFamily};
+    font-size: ${t.headline4FontSize};
+    font-weight: ${t.headline4FontWeight};
+    font-style: ${t.headline4FontStyle};
+    line-height: ${t.headline4LineHeight};
+    letter-spacing: ${t.headline4LetterSpacing};
   }
   h5 {
-    font-family: ${typography.headline5FontFamily};
-    font-size: ${typography.headline5FontSize};
-    font-weight: ${typography.headline5FontWeight};
-    font-style: ${typography.headline5FontStyle};
-    line-height: ${typography.headline5LineHeight};
-    letter-spacing: ${typography.headline5LetterSpacing};
+    font-family: ${t.headline5FontFamily};
+    font-size: ${t.headline5FontSize};
+    font-weight: ${t.headline5FontWeight};
+    font-style: ${t.headline5FontStyle};
+    line-height: ${t.headline5LineHeight};
+    letter-spacing: ${t.headline5LetterSpacing};
   }
   h6 {
-    font-family: ${typography.headline6FontFamily};
-    font-size: ${typography.headline6FontSize};
-    font-weight: ${typography.headline6FontWeight};
-    font-style: ${typography.headline6FontStyle};
-    line-height: ${typography.headline6LineHeight};
-    letter-spacing: ${typography.headline6LetterSpacing};
+    font-family: ${t.headline6FontFamily};
+    font-size: ${t.headline6FontSize};
+    font-weight: ${t.headline6FontWeight};
+    font-style: ${t.headline6FontStyle};
+    line-height: ${t.headline6LineHeight};
+    letter-spacing: ${t.headline6LetterSpacing};
   }
-
-  /* Spacing helpers
-   * Here we generate helper classes from tokens to set margins quickly.
-   * The classes syntax match the pattern ".margin-{direction}-{size}", for example: ".margin-top-sm"
-   */
-  // WHEN YOU HAVE SPACING TOKENS READY, UNCOMMENT LINES BELOW
-  /* ${Object.keys(spacing).map((token) => {
-    const [size, direction] = token.match(/[0-9]?[A-Z][a-z]+/g);
-    return `.margin-${direction.toLowerCase()}-${size.toLowerCase()} {
-      margin-${direction.toLowerCase()}: ${spacing[token]}
-    }`;
-  })} */
 `;
 
-/* Allow design system consumers to access font settings but control how and
- where they load the font. */
-
+// Allow design system consumers to access font settings but control how and
+// where they load the fon${t.
 export const fontUrl =
-  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap";
 
 const globalStyle = createGlobalStyle`
   body {
