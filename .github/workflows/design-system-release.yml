@@ -1,4 +1,4 @@
-name: Storybook
+name: Design System
 on:
   push:
     branches:
@@ -42,12 +42,12 @@ jobs:
 
       - name: Cache dependencies
         uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        id: yrn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yrn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yrn-
+            ${{ runner.os }}-yarn-
           
       - name: Install dependencies
         run: |
@@ -58,14 +58,24 @@ jobs:
         run: |
           yarn tokens
           
-          
       - name: Build Storybook
         run: |
           yarn storybook:build
-          
+      
+      - name: Deploy Index file
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          folder: ./.deploy
+          branch: gh-pages      
+          clean: false
+
+      
       - name: Deploy Storybook
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           folder: ./design-system/storybook-static
           branch: gh-pages
-          target-folder: storybook
+          target-folder: design-system
+          clean: true
+          clean-exclude: |
+            product

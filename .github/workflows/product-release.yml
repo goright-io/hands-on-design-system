@@ -1,4 +1,3 @@
-# This wqorkflow will be triggered every time when new version of library released
 name: Product release
 on:
   push:
@@ -59,25 +58,19 @@ jobs:
         run: |
           yarn product:build
 
+      - name: Deploy Index file
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          folder: ./.deploy
+          clean: false
+          branch: gh-pages  
+          
       - name: Deploy product
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           folder: ./product/build
           branch: gh-pages
-          
-      ## The following steps are for storybook deployment. Since we host product in the root, storybook will be overwritten every time we deploy a product. With these steps we restore it back
-      - name: Build design tokens
-        run: |
-          yarn tokens
-          
-      - name: Build Storybook
-        run: |
-          yarn storybook:build
-          
-      - name: Deploy Storybook
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          folder: ./design-system/storybook-static
-          branch: gh-pages
-          target-folder: storybook
-
+          target-folder: product
+          clean: true
+          clean-exclude: |
+            design-system
