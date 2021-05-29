@@ -1,9 +1,10 @@
-# This wqorkflow will be triggered every time when new version of library released
 name: Product release
 on:
   push:
     branches:
       - 'main'
+    paths:
+      - 'product/**'
 
 jobs:
   version-check:
@@ -57,8 +58,19 @@ jobs:
         run: |
           yarn product:build
 
+      - name: Deploy Index file
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          folder: ./.deploy
+          clean: false
+          branch: gh-pages  
+          
       - name: Deploy product
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           folder: ./product/build
           branch: gh-pages
+          target-folder: product
+          clean: true
+          clean-exclude: |
+            design-system
