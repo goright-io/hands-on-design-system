@@ -26,6 +26,7 @@ module.exports = (_, argv) => {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+    new webpack.NamedModulesPlugin(),
   ];
 
   return {
@@ -37,9 +38,6 @@ module.exports = (_, argv) => {
       library: libraryName,
       libraryTarget: "umd",
       umdNamedDefine: true,
-    },
-    optimization: {
-      moduleIds: "named",
     },
     module: {
       rules: [
@@ -59,6 +57,9 @@ module.exports = (_, argv) => {
         },
         {
           test: /\.svg$/,
+          issuer: {
+            test: /\.(js|ts)x?$/,
+          },
           use: [
             {
               loader: "@svgr/webpack",
@@ -86,5 +87,8 @@ module.exports = (_, argv) => {
       }),
     ],
     plugins: plugins,
+    node: {
+      fs: "empty",
+    },
   };
 };
