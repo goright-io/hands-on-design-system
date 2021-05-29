@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 
 const imagesPath = `${process.env.PUBLIC_URL}/images`;
 
-const card = `${process.env.PUBLIC_URL}/images/card.svg`;
-const cardBlue = `${process.env.PUBLIC_URL}/images/cardBlue.svg`;
-const cardPink = `${process.env.PUBLIC_URL}/images/cardPink.svg`;
+const card = `${imagesPath}/card.svg`;
+const cardBlue = `${imagesPath}/cardBlue.svg`;
+const cardPink = `${imagesPath}/images/cardPink.svg`;
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
