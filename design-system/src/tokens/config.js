@@ -44,16 +44,6 @@ StyleDictionary.registerFilter({
   },
 });
 
-/* Basic filter to separate spacing tokens. */
-StyleDictionary.registerFilter({
-  name: "isSpacing",
-  matcher: function (prop) {
-    return (
-      prop.path[0] === "spacing"
-    );
-  },
-});
-
 module.exports = {
   source: ["./src/tokens/design-tokens.json"],
   platforms: {
@@ -76,12 +66,6 @@ module.exports = {
           filter: {
             type: "color",
           },
-        },
-        /* Filter and extract spacing tokens*/
-        {
-          destination: "spacing.js",
-          format: "javascript/es6",
-          filter: "isSpacing",
         },
       ],
     },
