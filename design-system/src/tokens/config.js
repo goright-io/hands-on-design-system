@@ -17,33 +17,6 @@ StyleDictionary.registerTransform({
   },
 });
 
-/* Basic filter to separate typography tokens. It might need tweaking depending on the token data shape */
-StyleDictionary.registerFilter({
-  name: "isTypography",
-  matcher: function (prop) {
-    return (
-      [
-        'fontSize',
-        'textDecoration',
-        'fontFamily',
-        'fontWeight',
-        'fontStyle',
-        'fontStretch',
-        'fontStyleOld',
-        'letterSpacing',
-        'lineHeight',
-        'paragraphIndent',
-        'paragraphSpacing',
-        'textCase'
-      ].indexOf(prop.path[1]) !== -1
-    )
-    /* return (
-      prop.name.startsWith("headline") || prop.name.startsWith("paragraph")
-    );
-    */
-  },
-});
-
 module.exports = {
   source: ["./src/tokens/design-tokens.json"],
   platforms: {
@@ -57,7 +30,24 @@ module.exports = {
         {
           destination: "typography.js",
           format: "javascript/es6",
-          filter: "isTypography",
+          filter: function (prop) {
+            return (
+              [
+                "fontSize",
+                "textDecoration",
+                "fontFamily",
+                "fontWeight",
+                "fontStyle",
+                "fontStretch",
+                "fontStyleOld",
+                "letterSpacing",
+                "lineHeight",
+                "paragraphIndent",
+                "paragraphSpacing",
+                "textCase",
+              ].indexOf(prop.path[1]) !== -1
+            );
+          },
         },
         /* Filter and extract color tokens*/
         {
