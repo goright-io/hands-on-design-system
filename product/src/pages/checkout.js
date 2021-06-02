@@ -11,7 +11,7 @@ const imagesPath = `${process.env.PUBLIC_URL}/images`;
 
 const card = `${imagesPath}/card.svg`;
 const cardBlue = `${imagesPath}/cardBlue.svg`;
-const cardPink = `${imagesPath}/images/cardPink.svg`;
+const cardPink = `${imagesPath}/cardPink.svg`;
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
