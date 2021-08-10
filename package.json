@@ -42,15 +42,7 @@
     "components",
     "styled-components"
   ],
-  "standard": {
-    "env": [
-      "jest"
-    ],
-    "globals": [],
-    "ignore": [
-      "node_modules/**",
-      "design-system/**"
-    ],
-    "parser": "babel-eslint"
+  "resolutions": {
+    "babel-loader": "8.1.0"
   }
 }

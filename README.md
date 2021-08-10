@@ -90,3 +90,32 @@ product/
 - `yarn product:build` - creates minified production build
 - `yarn product:version` - bumps product version
 - `yarn deploy:product` - deploy product manually. Normally you don't need it, Github Action s will deploy automatically every time you release a new version.
+
+
+### Troubleshooting
+
+Sometimes when you run a server with the product, which is based on Create-React-App, you might receive a long error message about unmatched versions of dependencies. It starts with:
+
+```
+There might be a problem with the project dependency tree.
+It is likely not a bug in Create React App, but something you need to fix locally.
+
+The react-scripts package provided by Create React App requires a dependency:
+
+  "babel-loader": "8.0.4" // can also be "webpack"
+
+Don't try to install it manually: your package manager does it automatically.
+However, a different version of babel-loader was detected higher up in the tree:
+
+...
+```
+
+
+This is a known issue related to Create-React-App, which is a bit more difficult to fix in environment with multiple workspaes. There are a [few known solutions](https://github.com/storybookjs/storybook/issues/5183#issuecomment-892763711), which are already applied in this repository. However uf you still encounter this error, we suggest to create `.env` file with the following content:
+
+```
+SKIP_PREFLIGHT_CHECK=true
+```
+
+This will let you pass the check and run the project.
+
