@@ -31,22 +31,7 @@ module.exports = {
           destination: "typography.js",
           format: "javascript/es6",
           filter: function (prop) {
-            return (
-              [
-                "fontSize",
-                "textDecoration",
-                "fontFamily",
-                "fontWeight",
-                "fontStyle",
-                "fontStretch",
-                "fontStyleOld",
-                "letterSpacing",
-                "lineHeight",
-                "paragraphIndent",
-                "paragraphSpacing",
-                "textCase",
-              ].indexOf(prop.path[1]) !== -1
-            );
+            return prop.path[0] === "font";
           },
         },
         /* Filter and extract color tokens*/
@@ -55,6 +40,14 @@ module.exports = {
           format: "javascript/es6",
           filter: {
             type: "color",
+          },
+        },
+        /* Filter and extract spacing tokens*/
+        {
+          destination: "spacing.js",
+          format: "javascript/es6",
+          filter: function (prop) {
+            return prop.path[0] === "spacing";
           },
         },
       ],
