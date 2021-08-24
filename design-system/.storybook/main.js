@@ -8,6 +8,9 @@ const tokensPath = "./src/tokens/";
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.js"],
   addons: ["@storybook/addon-essentials", "storybook-addon-designs", "creevey"],
+  core: {
+    builder: "webpack5",
+  },
   webpackFinal: async (config) => {
     // use @babel/preset-react for JSX and env (instead of staged presets)
     config.module.rules[0].use[0].options.presets = [
@@ -45,8 +48,8 @@ module.exports = {
      */
     config.plugins.push({
       apply: (compiler) => {
-        compiler.hooks.beforeCompile.tap("WatchTokensSource", (params) => {
-          params.compilationDependencies.add(
+        compiler.hooks.afterCompile.tap("WatchTokensSource", (compilation) => {
+          compilation.fileDependencies.add(
             path.resolve(__dirname, tokensFileName)
           );
         });
