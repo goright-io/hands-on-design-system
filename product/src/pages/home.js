@@ -119,7 +119,7 @@ const StyledButton = styled(Button)`
 `;
 
 const StyledP = styled.p`
-  color: ${colors.primary900};
+  color: ${colors.primary500};
   font-weight: 700;
   margin-top: 8px;
 `;
