@@ -43,7 +43,7 @@ Button component provides interfaces for all types of the buttons. Different typ
     name="Colors"
     // Custom select control, which receives values from the name of color tokens
     argTypes={{
-      color: { control: { type: "select", options: Object.keys(themeColors) } },
+      color: { control: { type: "select" }, options: Object.keys(themeColors) },
     }}
     args={{ label: "Button", color: "secondary500" }}
   >
@@ -56,8 +56,8 @@ Button component provides interfaces for all types of the buttons. Different typ
   <Story
     name="Button with Icon"
     argTypes={{
-      name: { control: { type: "select", options: Object.keys(icons) } },
-      color: { control: { type: "select", options: Object.keys(themeColors) } },
+      name: { control: { type: "select" },  options: Object.keys(icons) },
+      color: { control: { type: "select" },  options: Object.keys(themeColors) },
     }}
     args={{ isOutline: true, name: "arrowBack" }}
   >
