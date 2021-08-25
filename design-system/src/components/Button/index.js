@@ -30,6 +30,7 @@ const StyledButton = styled.button`
   user-select: none;
   text-decoration: none;
   border-width: 0;
+  border-style: solid;
   border-radius: 1rem;
   padding: ${({ isIcon }) => (isIcon ? "12px" : "16px")};
   background-color: ${({ color }) => color};
