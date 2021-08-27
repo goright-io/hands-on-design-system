@@ -1,5 +1,5 @@
 # This wqorkflow runs visual tests every time 
-name: Run visual tests
+name: Visual tests
 on:
   push:
     paths:
