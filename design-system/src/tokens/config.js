@@ -23,7 +23,7 @@ module.exports = {
     js: {
       transformGroup: "js",
       buildPath: "./src/tokens/dist/",
-      transforms: ["size/px", "name/cti/camel"],
+      transforms: ["size/px", "name/ti/camel"],
       /* We split tokens into separate files - it will be easier to use them this way */
       files: [
         /* Filter and extract typography tokens */
@@ -40,14 +40,6 @@ module.exports = {
           format: "javascript/es6",
           filter: {
             type: "color",
-          },
-        },
-        /* Filter and extract spacing tokens*/
-        {
-          destination: "spacing.js",
-          format: "javascript/es6",
-          filter: function (prop) {
-            return prop.path[0] === "spacing";
           },
         },
       ],

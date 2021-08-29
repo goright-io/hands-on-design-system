@@ -56,9 +56,9 @@ Inside a `config.js` you already got a tailored style-dictionary config, which w
 - `yarn design-system:build` - builds components library into `dist/` folder.
 - `yarn design-system:version` - bumps library version and creates a commit with contents of `dist/` folder.
 - `yarn tokens` - rebuilds tokens
-- `yarn test:creevey` - run tests with [creevey](https://github.com/wKich/creevey)
-- `yarn test:creevey:ui` - run creevey with UI
-- `yarn test:creevey:update` - update all screenshots for creevey
+- `yarn test` - run tests with [creevey](https://github.com/wKich/creevey)
+- `yarn test:ui` - run creevey with UI
+- `yarn test:update` - update all screenshots for creevey
 - `yarn deploy:storybook` - deploys storybook manually
 
 ### Product
@@ -111,7 +111,7 @@ However, a different version of babel-loader was detected higher up in the tree:
 ```
 
 
-This is a known issue related to Create-React-App, which is a bit more difficult to fix in environment with multiple workspaes. There are a [few known solutions](https://github.com/storybookjs/storybook/issues/5183#issuecomment-892763711), which are already applied in this repository. However uf you still encounter this error, we suggest to create `.env` file with the following content:
+This is a known issue related to Create-React-App, which is a bit more difficult to fix in environment with multiple workspaces. There are a [few known solutions](https://github.com/storybookjs/storybook/issues/5183#issuecomment-892763711), which are already applied in this repository. However uf you still encounter this error, we suggest to create `.env` file with the following content:
 
 ```
 SKIP_PREFLIGHT_CHECK=true
@@ -119,3 +119,7 @@ SKIP_PREFLIGHT_CHECK=true
 
 This will let you pass the check and run the project.
 
+
+#### Storybook troubleshooting
+
+If storybook is not updating when it should, or dev server is not running, you can try to clear the cache. For storybook it's located at `design-system/node_modules/.cache/`

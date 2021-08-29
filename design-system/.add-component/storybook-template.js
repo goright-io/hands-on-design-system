@@ -1,5 +1,5 @@
 module.exports = (name) => `
-import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
 import ${name} from ".";
 

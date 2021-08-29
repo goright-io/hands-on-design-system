@@ -1,9 +1,9 @@
 # This wqorkflow runs visual tests every time 
-name: Run visual tests
+name: Visual tests
 on:
   push:
     paths:
-      - 'design-system/src/**'
+      - 'design-system/**'
 jobs:
   start-and-test:
     runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ jobs:
       - name: Start Storybook
         run: yarn start &
       - name: Run Visual Regression test
-        run: yarn test:creevey
+        run: yarn test
       - uses: actions/upload-artifact@v2
         with:
           name: report

@@ -1,4 +1,4 @@
-import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs";
 
 import Icon, { icons } from ".";
 import { colors as themeColors } from "../../tokens";
@@ -18,7 +18,7 @@ SVG icons with customizable color and size, mainly to be used inside the buttons
   <Story
     name="Size"
     argTypes={{
-      name: { control: { type: "select", options: Object.keys(icons) } },
+      name: { control: { type: "select" }, options: Object.keys(icons) },
     }}
     args={{ name: "heart", width: 24, height: 24 }}
   >
@@ -27,8 +27,8 @@ SVG icons with customizable color and size, mainly to be used inside the buttons
   <Story
     name="Colors"
     argTypes={{
-      name: { control: { type: "select", options: Object.keys(icons) } },
-      color: { control: { type: "select", options: Object.keys(themeColors) } },
+      name: { control: { type: "select" }, options: Object.keys(icons) },
+      color: { control: { type: "select" }, options: Object.keys(themeColors) },
     }}
     args={{ name: "heart", color: "primaryPurple100" }}
   >
