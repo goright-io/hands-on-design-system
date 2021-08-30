@@ -93,7 +93,7 @@ const bodyStyles = css`
    */
   // WHEN YOU HAVE SPACING TOKENS READY, UNCOMMENT LINES BELOW
   /* ${Object.keys(spacing).map((token) => {
-    const [size, direction] = token.match(/[0-9]?[A-Z][a-z]+/g);
+    const [size, direction] = token.match(/[0-9]?[A-Z0-9][a-z]+/g);
     return `.margin-${direction.toLowerCase()}-${size.toLowerCase()} {
       margin-${direction.toLowerCase()}: ${spacing[token]}
     }`;
