@@ -4,5 +4,4 @@ module.exports = {
   screenDir: path.join(__dirname, "../tests/referenceImages"),
   reportDir: path.join(__dirname, "../tests/report"),
   diffOptions: { threshold: 0.2 },
-  storybookUrl: "http://localhost:6006",
 };
