@@ -19,6 +19,7 @@ jobs:
       - name: Run Visual Regression test
         run: yarn test
       - uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
         with:
           name: report
           path: design-system/tests/report/
