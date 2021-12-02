@@ -86,18 +86,6 @@ const bodyStyles = css`
     line-height: ${typography.headline6LineHeight};
     letter-spacing: ${typography.headline6LetterSpacing};
   }
-
-  /* Spacing helpers
-   * Here we generate helper classes from tokens to set margins quickly.
-   * The classes syntax match the pattern ".margin-{direction}-{size}", for example: ".margin-top-sm"
-   */
-  // WHEN YOU HAVE SPACING TOKENS READY, UNCOMMENT LINES BELOW
-  /* ${Object.keys(spacing).map((token) => {
-    const [size, direction] = token.substring(5).split(/(?=[A-Z])/);
-    return `.margin-${direction.toLowerCase()}-${size.toLowerCase()} {
-      margin-${direction.toLowerCase()}: ${spacing[token]}
-    }`;
-  })} */
 `;
 
 /* Allow design system consumers to access font settings but control how and
